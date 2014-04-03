@@ -80,9 +80,10 @@ HRESULT __stdcall D3D9Mgr::MyPresent(LPDIRECT3DDEVICE9* pDevice, const RECT *pSo
 	return oPresent(pDevice, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion);
 }
 
-HRESULT __stdcall D3D9Mgr::MyReset(LPDIRECT3DDEVICE9* pDevice)
+HRESULT __stdcall D3D9Mgr::MyReset(LPDIRECT3DDEVICE9* pDevice, D3DPRESENT_PARAMETERS* pPresentationParameters)
 {
-	return oReset(pDevice);
+	
+	return oReset(pDevice, pPresentationParameters);
 }
 
 Present_t D3D9Mgr::oPresent = NULL;
