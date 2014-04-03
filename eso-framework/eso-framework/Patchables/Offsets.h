@@ -21,4 +21,26 @@ public:
 		m_d3ddevice9 = 0x84,												// From : ZoRenderDeviceD3D9::Present
 	};
 
+	enum class ClientCoreHandles
+	{
+		g_pClientCore = 0x13CFE04 - 0x400000,
+		m_unitList = 0xC,													// From : CancelCast
+	};
+
+	enum class UnitList
+	{
+		m_playerUnit = 0x50,												// From : UnitList::GetPlayerUnit
+	};
+
+	enum class Unit
+	{
+		GetName = 0x807240 - 0x400000,										// Unit::GetName
+		m_type = 0x68,														// From : Unit::IsKillable
+	};
+
+	enum class CameraManager
+	{
+		s_pCameraManager = 0x13CEE08 - 0x400000,
+	};
+
 };

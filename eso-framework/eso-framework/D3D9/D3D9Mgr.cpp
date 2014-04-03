@@ -26,11 +26,11 @@ void D3D9Mgr::Initialize()
 				{
 					
 					DWORD* vTable = *(DWORD**)d3d9Device;
-					m_resetAddress = vTable[16];
-					m_presentAddress = vTable[17];
+					s_resetAddress = vTable[16];
+					s_presentAddress = vTable[17];
 
-					oPresent = (Present_t)DetourFunction((PBYTE)m_presentAddress, (PBYTE)MyPresent);
-					oReset = (Reset_t)DetourFunction((PBYTE)m_resetAddress, (PBYTE)MyReset);
+					oPresent = (Present_t)DetourFunction((PBYTE)s_presentAddress, (PBYTE)MyPresent);
+					oReset = (Reset_t)DetourFunction((PBYTE)s_resetAddress, (PBYTE)MyReset);
 
 				}
 				else
@@ -61,30 +61,37 @@ void D3D9Mgr::Initialize()
 void D3D9Mgr::Shutdown()
 {
 
-	if (m_presentAddress)
+	if (s_presentAddress)
 	{
 		DetourRemove((PBYTE)oPresent, (PBYTE)MyPresent);
-		m_presentAddress = NULL;
+		s_presentAddress = NULL;
 	}
 
-	if (m_resetAddress)
+	if (s_resetAddress)
 	{
 		DetourRemove((PBYTE)oReset, (PBYTE)MyReset);
-		m_resetAddress = NULL;
+		s_resetAddress = NULL;
 	}
 
 }
 
 HRESULT __stdcall D3D9Mgr::MyPresent(LPDIRECT3DDEVICE9* pDevice, const RECT *pSourceRect, const RECT *pDestRect, HWND hDestWindowOverride, const RGNDATA *pDirtyRegion)
 {
+	OnFrame();
 	return oPresent(pDevice, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion);
 }
 
 HRESULT __stdcall D3D9Mgr::MyReset(LPDIRECT3DDEVICE9* pDevice, D3DPRESENT_PARAMETERS* pPresentationParameters)
 {
-	
 	return oReset(pDevice, pPresentationParameters);
 }
 
+void D3D9Mgr::OnFrame()
+{
+	EsoMgr::GetSingleton()->OnFrame();
+}
+
+DWORD D3D9Mgr::s_resetAddress;
+DWORD D3D9Mgr::s_presentAddress;
 Present_t D3D9Mgr::oPresent = NULL;
 Reset_t D3D9Mgr::oReset = NULL;

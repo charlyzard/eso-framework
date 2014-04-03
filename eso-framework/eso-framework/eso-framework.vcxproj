@@ -91,15 +91,23 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
       </PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="EsoImpl\ClientCoreHandles.cpp" />
+    <ClCompile Include="EsoImpl\Unit.cpp" />
+    <ClCompile Include="EsoImpl\UnitList.cpp" />
     <ClCompile Include="EsoImpl\ZoRenderDeviceD3D9.cpp" />
     <ClCompile Include="EsoImpl\ZoRenderManager.cpp" />
     <ClCompile Include="EsoMgr.cpp" />
+    <ClCompile Include="Logger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D3D9\D3D9Mgr.h" />
+    <ClInclude Include="EsoImpl\ClientCoreHandles.h" />
+    <ClInclude Include="EsoImpl\Unit.h" />
+    <ClInclude Include="EsoImpl\UnitList.h" />
     <ClInclude Include="EsoImpl\ZoRenderDeviceD3D9.h" />
     <ClInclude Include="EsoImpl\ZoRenderManager.h" />
     <ClInclude Include="EsoMgr.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="Patchables\Offsets.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

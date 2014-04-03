@@ -10,12 +10,13 @@ class D3D9Mgr
 {
 
 public:
-	void Initialize();
-	void Shutdown();
+	static void Initialize();
+	static void Shutdown();
 
 private:
-	DWORD m_presentAddress;
-	DWORD m_resetAddress;
+	static DWORD s_presentAddress;
+	static DWORD s_resetAddress;
+	static void OnFrame();
 	static Present_t oPresent;
 	static Reset_t oReset;
 	static HRESULT __stdcall MyPresent(LPDIRECT3DDEVICE9* pDevice, const RECT *pSourceRect, const RECT *pDestRect, HWND hDestWindowOverride, const RGNDATA *pDirtyRegion);

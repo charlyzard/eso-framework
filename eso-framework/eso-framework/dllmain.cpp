@@ -4,7 +4,7 @@
 
 DWORD WINAPI DllOnLoad(LPVOID hModule)
 {
-	MessageBoxA(0, "DllOnLoad", "", 0);
+	
 	EsoMgr::Initialize((HMODULE)hModule);
 
 	while (1)

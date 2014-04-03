@@ -1,5 +1,6 @@
 #include "EsoMgr.h"
-
+#include <string>
+#include <sstream>
 
 void EsoMgr::Initialize(HMODULE myModule)
 {
@@ -10,14 +11,21 @@ void EsoMgr::Initialize(HMODULE myModule)
 		s_singleton = new EsoMgr();
 
 	s_singleton->m_baseAddress = (DWORD)GetModuleHandle(NULL);
-	s_singleton->GetD3D9Mgr()->Initialize();
+
+	s_singleton->GetLogger()->Initialize();
+	D3D9Mgr::Initialize();
+
+	s_singleton->GetLogger()->WriteLine("EsoMgr::Initialize done !");
 
 }
 
 void EsoMgr::Shutdown()
 {
 
-	s_singleton->GetD3D9Mgr()->Shutdown();
+	s_singleton->GetLogger()->WriteLine("EsoMgr::Shutdown ...");
+
+	D3D9Mgr::Shutdown();
+	s_singleton->GetLogger()->Shutdown();
 
 	delete s_singleton; 
 
@@ -30,9 +38,36 @@ ZoRenderManager* EsoMgr::GetRenderManager() const
 	return *(ZoRenderManager**)(m_baseAddress + (DWORD)Offsets::ZoRenderManager::s_pZoRenderManager);
 }
 
- D3D9Mgr* EsoMgr::GetD3D9Mgr()
+ClientCoreHandles* EsoMgr::GetClientCore() const
+{
+	return *(ClientCoreHandles**)(m_baseAddress + (DWORD)Offsets::ClientCoreHandles::g_pClientCore);
+}
+
+Logger* EsoMgr::GetLogger()
+{
+	return &m_logger;
+}
+
+ void EsoMgr::OnFrame()
  {
- 	return &m_d3d9Mgr;
+	 Tester();
+ }
+
+ bool testKeyPressed = false;
+ void EsoMgr::Tester()
+ {
+	 if (GetAsyncKeyState(VK_F1) & 0x8000 &&
+		 !testKeyPressed)
+	 {
+		 testKeyPressed = true;
+		 
+
+
+	 }
+	 else
+	 {
+		 testKeyPressed = GetAsyncKeyState(VK_F1) & 0x8000;
+	 }
  }
 
 EsoMgr* EsoMgr::s_singleton = NULL;
