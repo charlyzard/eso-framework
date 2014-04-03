@@ -5,14 +5,17 @@
 DWORD WINAPI DllOnLoad(LPVOID hModule)
 {
 	MessageBoxA(0, "DllOnLoad", "", 0);
-	EsoMgr::GetSingleton()->Initialize();
-	return 0;
-}
+	EsoMgr::Initialize((HMODULE)hModule);
 
-DWORD WINAPI DllOnUnload(LPVOID dummy)
-{
-	MessageBoxA(0, "DllOnUnload", "", 0);
-	EsoMgr::GetSingleton()->Shutdown();
+	while (1)
+	{
+
+		if (GetAsyncKeyState(VK_F12) & 0x8000)
+			EsoMgr::Shutdown();
+
+		Sleep(10); // Meh
+	}
+
 	return 0;
 }
 
@@ -30,8 +33,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 		break;
 	case DLL_THREAD_DETACH:
 		break;
-	case DLL_PROCESS_DETACH:
-		CreateThread(0, 0, DllOnUnload, hModule, 0, 0);
+	case DLL_PROCESS_DETACH:		
 		break;
 	}
 	return TRUE;

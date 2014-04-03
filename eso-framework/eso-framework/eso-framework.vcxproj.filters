@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Patchables">
+      <UniqueIdentifier>{95cd5bc5-93f5-40a6-a642-8b4e1a1520c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\EsoImpl">
+      <UniqueIdentifier>{490813b4-cd90-4ce4-82f8-d61987f6ed65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\EsoImpl">
+      <UniqueIdentifier>{dad506d4-0ae6-4e02-9230-64263b48da1b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -21,10 +30,25 @@
     <ClCompile Include="EsoMgr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EsoImpl\ZoRenderManager.cpp">
+      <Filter>Source Files\EsoImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="EsoImpl\ZoRenderDeviceD3D9.cpp">
+      <Filter>Source Files\EsoImpl</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EsoMgr.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Patchables\Offsets.h">
+      <Filter>Header Files\Patchables</Filter>
+    </ClInclude>
+    <ClInclude Include="EsoImpl\ZoRenderManager.h">
+      <Filter>Header Files\EsoImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="EsoImpl\ZoRenderDeviceD3D9.h">
+      <Filter>Header Files\EsoImpl</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
