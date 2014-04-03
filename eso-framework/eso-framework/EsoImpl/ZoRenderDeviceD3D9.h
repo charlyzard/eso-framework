@@ -1,11 +1,11 @@
 #pragma once
 #include <windows.h>
-#include "../Patchables/Offsets.h"
+#include <d3d9.h>
 
 class ZoRenderDeviceD3D9
 {
 
 public:
-	DWORD GetDevice() const;
+	IDirect3DDevice9* GetDevice() const;
 
 };

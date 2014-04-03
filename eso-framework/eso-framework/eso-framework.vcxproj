@@ -41,9 +41,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)\Libs\MSDetours\Include;$(SolutionDir)\Libs\DX_SDK\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Libs\MSDetours\Lib;$(SolutionDir)\Libs\DX_SDK\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)\Libs\MSDetours\Include;$(SolutionDir)\Libs\DX_SDK\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\Libs\MSDetours\Lib;$(SolutionDir)\Libs\DX_SDK\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -56,6 +60,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -73,9 +78,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="D3D9\D3D9Mgr.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -89,6 +96,7 @@
     <ClCompile Include="EsoMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="D3D9\D3D9Mgr.h" />
     <ClInclude Include="EsoImpl\ZoRenderDeviceD3D9.h" />
     <ClInclude Include="EsoImpl\ZoRenderManager.h" />
     <ClInclude Include="EsoMgr.h" />

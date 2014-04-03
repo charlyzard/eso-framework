@@ -1,7 +1,7 @@
 #include "ZoRenderDeviceD3D9.h"
+#include "../Patchables/Offsets.h"
 
-// TODO : Include D3D9 SDK and return a IDirect3DDevice9 object.
-DWORD ZoRenderDeviceD3D9::GetDevice() const
+IDirect3DDevice9* ZoRenderDeviceD3D9::GetDevice() const
 {
-	return *(DWORD*)(this + (DWORD)Offsets::ZoRenderDeviceD3D9::m_d3ddevice9);
+	return *(IDirect3DDevice9**)(this + (DWORD)Offsets::ZoRenderDeviceD3D9::m_d3ddevice9);
 }

@@ -22,6 +22,12 @@
     <Filter Include="Source Files\EsoImpl">
       <UniqueIdentifier>{dad506d4-0ae6-4e02-9230-64263b48da1b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\D3D9">
+      <UniqueIdentifier>{13a1e397-2e90-4c40-abc7-dcd44da9013f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\D3D9">
+      <UniqueIdentifier>{734b75f5-ce50-4c89-9c59-d37c51562f8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -36,6 +42,9 @@
     <ClCompile Include="EsoImpl\ZoRenderDeviceD3D9.cpp">
       <Filter>Source Files\EsoImpl</Filter>
     </ClCompile>
+    <ClCompile Include="D3D9\D3D9Mgr.cpp">
+      <Filter>Source Files\D3D9</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EsoMgr.h">
@@ -49,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="EsoImpl\ZoRenderDeviceD3D9.h">
       <Filter>Header Files\EsoImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="D3D9\D3D9Mgr.h">
+      <Filter>Header Files\D3D9</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
