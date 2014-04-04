@@ -1,5 +1,6 @@
 #include "ZoRenderManager.h"
 #include "../Patchables/Offsets.h"
+#include <iostream>
 
 ZoRenderManager::RENDER_API ZoRenderManager::GetRenderApiType() const
 {

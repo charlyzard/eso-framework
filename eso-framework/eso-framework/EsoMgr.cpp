@@ -1,6 +1,7 @@
 #include "EsoMgr.h"
 #include <string>
 #include <sstream>
+#include <vector>
 
 void EsoMgr::Initialize(HMODULE myModule)
 {
@@ -43,6 +44,11 @@ ClientCoreHandles* EsoMgr::GetClientCore() const
 	return *(ClientCoreHandles**)(m_baseAddress + (DWORD)Offsets::ClientCoreHandles::g_pClientCore);
 }
 
+ClientWorld* EsoMgr::GetClientWorld() const
+{
+	return *(ClientWorld**)(m_baseAddress + (DWORD)Offsets::ClientWorld::g_pClientWorld);
+}
+
 Logger* EsoMgr::GetLogger()
 {
 	return &m_logger;
@@ -51,6 +57,7 @@ Logger* EsoMgr::GetLogger()
  void EsoMgr::OnFrame()
  {
 	 Tester();
+
  }
 
  bool testKeyPressed = false;

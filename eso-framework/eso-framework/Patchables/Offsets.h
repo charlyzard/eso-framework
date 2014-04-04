@@ -29,18 +29,40 @@ public:
 
 	enum class UnitList
 	{
+		GetFirstUnit = 0x80E820 - 0x400000,									// UnitList::GetFirstUnit
+		GetNextUnit = 0x80FAD0 - 0x400000,									// UnitList::GetNextUnit
+		GetIterUnit = 0x80E840 - 0x400000,									// UnitList::GetIterUnit
 		m_playerUnit = 0x50,												// From : UnitList::GetPlayerUnit
 	};
 
 	enum class Unit
 	{
 		GetName = 0x807240 - 0x400000,										// Unit::GetName
+		GetPosition = 0x8026B0 - 0x400000,									// Unit::GetPosition
+		GetRenderHeading = 0x804D90 - 0x400000,								// Unit::GetRenderHeading
 		m_type = 0x68,														// From : Unit::IsKillable
 	};
 
 	enum class CameraManager
 	{
 		s_pCameraManager = 0x13CEE08 - 0x400000,
+	};
+
+	enum class ClientWorld
+	{
+		g_pClientWorld = 0x13CF95C - 0x400000,
+		m_camera = 0x3A8,													// From : UpdateZoRenderData
+	};
+
+	enum class ZoCamera
+	{
+		m_viewMatrix = 0x40,												// From : ZoCamera::GetViewMatrix
+		m_projectionMatrix = 0x80,											// From : ZoCamera::GetProjectionMatrix
+	};
+
+	enum class WorldPosition
+	{
+		ToRenderPosition = 0x6EFAF0 - 0x400000,
 	};
 
 };

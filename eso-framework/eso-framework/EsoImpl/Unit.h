@@ -1,5 +1,4 @@
 #pragma once
-#include "../Patchables/Offsets.h"
 
 class Unit
 {
@@ -20,7 +19,9 @@ public:
 	};
 
 	UNIT_TYPE GetType() const;
-
 	char* GetName() const;
+	void GetPosition(float* pos) const;
+	void GetRenderPosition(float* pos) const;
+	float GetRenderHeading() const;
 
 };

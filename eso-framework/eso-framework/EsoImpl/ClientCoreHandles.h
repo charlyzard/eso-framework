@@ -1,5 +1,4 @@
 #pragma once
-#include "../Patchables/Offsets.h"
 #include "UnitList.h"
 
 class ClientCoreHandles

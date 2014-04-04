@@ -3,6 +3,7 @@
 #include "Patchables/Offsets.h"
 #include "EsoImpl/ZoRenderManager.h"
 #include "EsoImpl/ClientCoreHandles.h"
+#include "EsoImpl/ClientWorld.h"
 #include "D3D9/D3D9Mgr.h"
 #include "Logger.h"
 
@@ -13,6 +14,7 @@ public:
 	DWORD m_baseAddress;
 	ZoRenderManager* GetRenderManager() const;
 	ClientCoreHandles* GetClientCore() const;
+	ClientWorld* GetClientWorld() const;
 	void OnFrame();
 	void Tester();
 	Logger* GetLogger();

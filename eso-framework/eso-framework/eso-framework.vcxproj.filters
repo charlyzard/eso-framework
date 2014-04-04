@@ -28,6 +28,12 @@
     <Filter Include="Source Files\D3D9">
       <UniqueIdentifier>{734b75f5-ce50-4c89-9c59-d37c51562f8c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{5cf18b1e-7b76-46ab-8cb6-c3092c11d26e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{ac350f22-d23c-413c-a2cd-0f12893c5431}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -55,6 +61,12 @@
       <Filter>Source Files\EsoImpl</Filter>
     </ClCompile>
     <ClCompile Include="EsoImpl\Unit.cpp">
+      <Filter>Source Files\EsoImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="EsoImpl\ClientWorld.cpp">
+      <Filter>Source Files\EsoImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="EsoImpl\ZoCamera.cpp">
       <Filter>Source Files\EsoImpl</Filter>
     </ClCompile>
   </ItemGroup>
@@ -85,6 +97,15 @@
     </ClInclude>
     <ClInclude Include="EsoImpl\Unit.h">
       <Filter>Header Files\EsoImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="EsoImpl\ClientWorld.h">
+      <Filter>Header Files\EsoImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="EsoImpl\ZoCamera.h">
+      <Filter>Header Files\EsoImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Vector3.h">
+      <Filter>Header Files\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
