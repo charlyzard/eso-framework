@@ -1,7 +1,7 @@
 #pragma once
 #include <windows.h>
 
-// Version : eso.live.1.0.0.962092
+// Version : eso.live.2.0.4.1144783
 // All the pointers are 0x400000 based.
 
 class Offsets
