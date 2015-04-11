@@ -18,7 +18,7 @@ public:
 
 	enum class ZoRenderDeviceD3D9
 	{
-		m_d3ddevice9 = 0x84,												// From : ZoRenderDeviceD3D9::Present
+		m_d3ddevice9 = 0x90,												// From : ZoRenderDeviceD3D9::Present
 	};
 
 	enum class ClientCoreHandles
