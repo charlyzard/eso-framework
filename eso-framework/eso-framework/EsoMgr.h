@@ -17,6 +17,7 @@ public:
 	ClientWorld* GetClientWorld() const;
 	void OnFrame();
 	void Tester();
+	void GraphicTester();
 	Logger* GetLogger();
 	static EsoMgr* GetSingleton() { return s_singleton; };
 	static void Initialize(HMODULE myModule);

@@ -25,6 +25,7 @@ public:
 	{
 		g_pClientCore = 0x198DC5C - 0x400000,
 		m_unitList = 0xD8,													// From : CancelCast
+		GetUnitListAddress = 0x05A5F50 - 0x400000,
 	};
 	
 	enum class UnitList
