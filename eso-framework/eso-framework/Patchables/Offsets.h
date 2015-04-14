@@ -1,7 +1,7 @@
 #pragma once
 #include <windows.h>
 
-// Version : eso.live.2.0.4.1144783
+// Version : eso.live.2.0.5.1147797
 // All the pointers are 0x400000 based.
 
 class Offsets
@@ -11,7 +11,7 @@ public:
 	
 	enum class ZoRenderManager
 	{
-		s_pZoRenderManager = 0x1B30F60 - 0x400000,
+		s_pZoRenderManager = 0x1B31F60 - 0x400000,
 		m_renderDeviceD3D9 = 0x4,											// From : ZoRenderManager::Present
 		m_renderApiType = 0x84,												// From : ZosClient::Initialize
 	};
@@ -23,35 +23,35 @@ public:
 
 	enum class ClientCoreHandles
 	{
-		g_pClientCore = 0x198DC5C - 0x400000,
+		g_pClientCore = 0x198EC5C - 0x400000,
 		m_unitList = 0xD8,													// From : CancelCast
-		GetUnitListAddress = 0x05A5F50 - 0x400000,
+		GetUnitListAddress = 0x5A6080 - 0x400000,
 	};
 	
 	enum class UnitList
 	{
-		GetFirstUnit = 0xA015F0 - 0x400000,									// UnitList::GetFirstUnit
-		GetNextUnit = 0xA02790 - 0x400000,									// UnitList::GetNextUnit
-		GetIterUnit = 0xA01630 - 0x400000,									// UnitList::GetIterUnit
+		GetFirstUnit = 0x00A01D40 - 0x400000,									// UnitList::GetFirstUnit
+		GetNextUnit = 0x00A02EE0 - 0x400000,									// UnitList::GetNextUnit
+		GetIterUnit = 0x00A01D80 - 0x400000,									// UnitList::GetIterUnit
 		m_playerUnit = 0x50,												// From : UnitList::GetPlayerUnit
 	};
 	
 	enum class Unit
 	{
-		GetName = 0x9F86C0 - 0x400000,										// Unit::GetName
-		GetPosition = 0x9F0AB0 - 0x400000,									// Unit::GetPosition
-		GetRenderHeading = 0x9F3170 - 0x400000,								// Unit::GetRenderHeading
+		GetName = 0x009F8E20 - 0x400000,										// Unit::GetName
+		GetPosition = 0x009F1210 - 0x400000,									// Unit::GetPosition
+		GetRenderHeading = 0x009F38D0 - 0x400000,								// Unit::GetRenderHeading
 		m_type = 0x94,														// From : Unit::IsKillable
 	};
 	
 	enum class CameraManager
 	{
-		s_pCameraManager = 0x198CC68 - 0x400000,
+		s_pCameraManager = 0x198DC68 - 0x400000,
 	};
 	
 	enum class ClientWorld
 	{
-		g_pClientWorld = 0x198D6DC - 0x400000,
+		g_pClientWorld = 0x198E6DC - 0x400000,
 		m_camera = 0x5E0,													// From : UpdateZoRenderData
 	};
 	
@@ -63,7 +63,7 @@ public:
 	
 	enum class WorldPosition
 	{
-		ToRenderPosition = 0x89F5A0 - 0x400000,
+		ToRenderPosition = 0x0089FC60 - 0x400000,
 	};
 
 };
