@@ -1,7 +1,7 @@
 #pragma once
 #include <windows.h>
 
-// Version : eso.live.2.0.5.1147797
+// Version : eso.live.2.0.5.1150504
 // All the pointers are 0x400000 based.
 
 class Offsets
@@ -25,7 +25,7 @@ public:
 	{
 		g_pClientCore = 0x198EC5C - 0x400000,
 		m_unitList = 0xD8,													// From : CancelCast
-		GetUnitListAddress = 0x5A6080 - 0x400000,
+		GetUnitListAddress = 0x005A6080 - 0x400000,
 	};
 	
 	enum class UnitList
